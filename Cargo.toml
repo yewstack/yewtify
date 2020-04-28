@@ -1,0 +1,15 @@
+[package]
+name = "yewtify"
+version = "0.0.0"
+authors = ["Denis Kolodin <deniskolodin@gmail.com>"]
+edition = "2018"
+repository = "https://github.com/yewstack/yewtify"
+homepage = "https://github.com/yewstack/yewtify"
+documentation = "https://docs.rs/yewtify/"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+keywords = ["yew", "ui", "components"]
+categories = ["wasm", "gui"]
+description = "Vuetify components for Yew Framework"
+
+[dependencies]
