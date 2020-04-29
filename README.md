@@ -21,6 +21,11 @@ html! {
 }
 ```
 
+## Available components
+
+- [x] **App** (v-app)
+- [x] **NavigationDrawer** (v-navigation-drawer)
+
 ## Add more components
 
 Work in progress yet... Feel free to add your component.
