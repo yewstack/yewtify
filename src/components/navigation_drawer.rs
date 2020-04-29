@@ -1,3 +1,4 @@
+use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct NavigationDrawer {
@@ -8,6 +9,10 @@ pub struct Msg {}
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
+    // TODO: Move to mixin `applicationable`
+    #[prop_or_default]
+    pub app: bool,
+
     #[prop_or_default]
     pub absolute: bool,
     #[prop_or_default]
@@ -42,18 +47,14 @@ impl Component for NavigationDrawer {
     fn view(&self) -> Html {
         let mut classes = Vec::new();
         classes.push("v-navigation-drawer");
-        if self.props.absolute {
-            classes.push("v-navigation-drawer--absolute");
-        }
-        if self.props.bottom {
-            classes.push("v-navigation-drawer--bottom");
-        }
-        if self.props.clipped {
-            classes.push("v-navigation-drawer--clipped");
-        }
+        classes.push_if(self.props.absolute, "v-navigation-drawer--absolute");
+        classes.push_if(self.props.bottom, "v-navigation-drawer--bottom");
+        classes.push_if(self.props.clipped, "v-navigation-drawer--clipped");
         /*
         "v-navigation-drawer--close": !this.isActive,
-        "v-navigation-drawer--fixed": !this.absolute && (this.app || this.fixed),
+        */
+        //"v-navigation-drawer--fixed": !this.absolute && (this.app || this.fixed),
+        /*
         "v-navigation-drawer--floating": this.floating,
         "v-navigation-drawer--is-mobile": this.isMobile,
         "v-navigation-drawer--is-mouseover": this.isMouseover,
@@ -62,12 +63,8 @@ impl Component for NavigationDrawer {
         "v-navigation-drawer--open": this.isActive,
         "v-navigation-drawer--open-on-hover": this.expandOnHover,
         */
-        if self.props.right {
-            classes.push("v-navigation-drawer--right");
-        }
-        if self.props.temporary {
-            classes.push("v-navigation-drawer--temporary");
-        }
+        classes.push_if(self.props.right, "v-navigation-drawer--right");
+        classes.push_if(self.props.temporary, "v-navigation-drawer--temporary");
         html! {
             <div class=classes>
                 { self.props.children.render() }
