@@ -67,7 +67,10 @@ impl Component for NavigationDrawer {
         classes.push_if(self.props.temporary, "v-navigation-drawer--temporary");
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                <div class="v-navigation-drawer__content">
+                    { self.props.children.render() }
+                </div>
+                <div class="v-navigation-drawer__border" />
             </div>
         }
     }

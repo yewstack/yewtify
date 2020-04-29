@@ -31,10 +31,12 @@ impl Component for ListItemIcon {
     }
 
     fn view(&self) -> Html {
-        let mut classes = vec!["v-list-item__icon"];
+        let mut classes = vec!["v-icon"];
+        classes.push("notranslate");
+        classes.push("mdi");
+        classes.push(self.props.icon.as_ref());
         html! {
-            <div class=classes>
-            </div>
+            <i class=classes aria-hidden=true />
         }
     }
 }
