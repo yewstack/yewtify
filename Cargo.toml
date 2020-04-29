@@ -14,3 +14,7 @@ description = "Vuetify components for Yew Framework"
 
 [dependencies]
 yew = "0.15.0"
+
+[build-dependencies]
+anyhow = "1.0.28"
+sass-rs = { git = "ssh://git@github.com/compass-rs/sass-rs" }
