@@ -1,3 +1,4 @@
+use crate::mdi_icon::MdiIcon;
 use crate::utils::PushIf;
 use yew::prelude::*;
 
@@ -8,7 +9,9 @@ pub struct ListItemIcon {
 pub struct Msg {}
 
 #[derive(Properties, Clone, PartialEq)]
-pub struct Props {}
+pub struct Props {
+    pub icon: MdiIcon,
+}
 
 impl Component for ListItemIcon {
     type Message = Msg;

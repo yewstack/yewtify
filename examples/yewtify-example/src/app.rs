@@ -27,7 +27,7 @@ impl Component for YouTubeLayout {
                     <yewtify::List dense=true>
                         <yewtify::ListItem>
                             <yewtify::ListItemAction>
-                                <yewtify::ListItemIcon />
+                                <yewtify::ListItemIcon icon=yewtify::MdiIcon::TrendingUp />
                             </yewtify::ListItemAction>
                             <yewtify::ListItemContent>
                             </yewtify::ListItemContent>

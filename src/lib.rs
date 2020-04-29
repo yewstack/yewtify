@@ -1,5 +1,6 @@
 pub mod components;
 //pub mod mixin;
+pub mod mdi_icon;
 pub mod settings;
 mod utils;
 
@@ -9,3 +10,4 @@ pub use components::list::{
     list_item_content::ListItemContent, list_item_icon::ListItemIcon,
 };
 pub use components::navigation_drawer::NavigationDrawer;
+pub use mdi_icon::MdiIcon;
