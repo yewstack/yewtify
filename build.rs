@@ -10,7 +10,7 @@ fn main() -> Result<(), Error> {
     opts.output_style = OutputStyle::Compact;
     let data = compile_file("./styles/yewtify.sass", opts)
         .map_err(|err| anyhow!("sass builder failed with: {}", err))?;
-    let mut path = PathBuf::from(env::var("OUT_DIR")?);
+    let mut path = PathBuf::from(env::var("YEWTIFY_OUT")?);
     path.push("yewtify.css");
     let mut file = File::create(path)?;
     file.write_all(data.as_bytes())?;
