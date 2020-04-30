@@ -13,6 +13,7 @@ categories = ["wasm", "gui"]
 description = "Vuetify components for Yew Framework"
 
 [dependencies]
+mixin = "0.2.0"
 yew = "0.15.0"
 
 [build-dependencies]

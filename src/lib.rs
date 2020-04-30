@@ -1,5 +1,4 @@
 pub mod components;
-//pub mod mixin;
 pub mod mdi_icon;
 pub mod settings;
 mod utils;
