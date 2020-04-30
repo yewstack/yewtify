@@ -7,12 +7,9 @@ pub struct NavigationDrawer {
 
 pub struct Msg {}
 
+#[mixin::insert(Applicationable)]
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
-    // TODO: Move to mixin `applicationable`
-    #[prop_or_default]
-    pub app: bool,
-
     #[prop_or_default]
     pub absolute: bool,
     #[prop_or_default]

@@ -8,7 +8,6 @@ pub struct App {
 
 pub struct Msg {}
 
-#[mixin::insert(Applicationable)]
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     #[prop_or_default]
