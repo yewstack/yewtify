@@ -40,6 +40,7 @@ impl Component for YouTubeLayout {
                 </y::NavigationDrawer>
                 <y::AppBar color=y::Color::Red>
                     <y::AppBarNavIcon />
+                    <y::Icon large=true icon=y::MdiIcon::Youtube />
                 </y::AppBar>
             </y::App>
         }

@@ -1272,6 +1272,7 @@ impl MdiIcon {
     pub const Xml: Self = MdiIcon("mdi-xml");
     pub const Yeast: Self = MdiIcon("mdi-yeast");
     pub const Yelp: Self = MdiIcon("mdi-yelp");
+    pub const Youtube: Self = MdiIcon("mdi-youtube");
     pub const YoutubePlay: Self = MdiIcon("mdi-youtube-play");
     pub const ZipBox: Self = MdiIcon("mdi-zip-box");
 }
