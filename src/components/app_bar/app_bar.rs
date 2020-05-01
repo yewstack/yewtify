@@ -1,5 +1,4 @@
 use crate::styles::Color;
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct AppBar {

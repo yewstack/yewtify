@@ -1,5 +1,4 @@
 use crate::mdi_icon::MdiIcon;
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct ListItemIcon {
@@ -31,7 +30,7 @@ impl Component for ListItemIcon {
     }
 
     fn view(&self) -> Html {
-        let mut classes = vec!["v-icon"];
+        let mut classes = Classes::from("v-icon");
         classes.push("notranslate");
         classes.push("mdi");
         classes.push(self.props.icon.as_ref());

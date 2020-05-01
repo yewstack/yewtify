@@ -1,4 +1,3 @@
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct ListItemAvatar {
@@ -33,7 +32,7 @@ impl Component for ListItemAvatar {
     }
 
     fn view(&self) -> Html {
-        let mut classes = vec!["v-list-item-avatar"];
+        let mut classes = Classes::from("v-list-item-avatar");
         classes.push_if(self.props.horizontal, "v-list-item__avatar--horizontal");
         html! {
             <div class=classes>

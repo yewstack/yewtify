@@ -1,4 +1,3 @@
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct List {
@@ -49,7 +48,7 @@ impl Component for List {
     }
 
     fn view(&self) -> Html {
-        let mut classes = vec!["v-list"];
+        let mut classes = Classes::from("v-list");
         classes.push_if(self.props.dense, "v-list--dense");
         classes.push_if(self.props.disabled, "v-list--disabled");
         classes.push_if(self.props.flat, "v-list--flat");

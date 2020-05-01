@@ -1,4 +1,3 @@
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct ListItemSubTitle {
@@ -31,7 +30,7 @@ impl Component for ListItemSubTitle {
     }
 
     fn view(&self) -> Html {
-        let mut classes = vec!["v-list-item__subtitle"];
+        let mut classes = Classes::from("v-list-item__subtitle");
         html! {
             <div class=classes>
                 { self.props.children.render() }

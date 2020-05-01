@@ -1,4 +1,3 @@
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct AppBarNavIcon {

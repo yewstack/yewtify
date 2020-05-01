@@ -15,7 +15,7 @@ description = "Vuetify components for Yew Framework"
 [dependencies]
 mixin = "0.2.0"
 strum = { version = "0.18.0", features = ["derive"] }
-yew = "0.15.0"
+yew = { git = "ssh://git@github.com/yewstack/yew", branch = "push-if" }
 
 [build-dependencies]
 anyhow = "1.0.28"

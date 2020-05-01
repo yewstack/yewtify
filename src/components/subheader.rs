@@ -1,4 +1,3 @@
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct SubHeader {
@@ -33,7 +32,7 @@ impl Component for SubHeader {
     }
 
     fn view(&self) -> Html {
-        let mut classes = vec!["v-subheader"];
+        let mut classes = Classes::from("v-subheader");
         classes.push_if(self.props.inset, "v-subheader--inset");
         html! {
             <div class=classes>

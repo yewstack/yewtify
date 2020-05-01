@@ -1,4 +1,3 @@
-use crate::utils::PushIf;
 use yew::prelude::*;
 
 pub struct NavigationDrawer {
@@ -42,7 +41,7 @@ impl Component for NavigationDrawer {
     }
 
     fn view(&self) -> Html {
-        let mut classes = Vec::new();
+        let mut classes = Classes::new();
         classes.push("v-navigation-drawer");
         classes.push_if(self.props.absolute, "v-navigation-drawer--absolute");
         classes.push_if(self.props.bottom, "v-navigation-drawer--bottom");
