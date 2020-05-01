@@ -34,8 +34,8 @@ impl Component for App {
     }
 
     fn view(&self) -> Html {
-        let mut classes = vec!["v-application"];
-        classes.push_if_or(self.props.is_dark(), "theme--dark", "theme--light");
+        let classes = Classes::from("v-application");
+        let mut classes = classes.extend(self.props.theme_classes());
         classes.push_if_or(
             self.props.is_rtl(),
             "v-application--is-rtl",
