@@ -1,6 +1,7 @@
 pub mod components;
 pub mod mdi_icon;
 pub mod settings;
+pub mod styles;
 mod utils;
 
 pub use components::app::App;
