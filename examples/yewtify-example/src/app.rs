@@ -38,6 +38,9 @@ impl Component for YouTubeLayout {
                         <y::SubHeader>{ "SUBSCRIPTIONS" }</y::SubHeader>
                     </y::List>
                 </y::NavigationDrawer>
+                <y::AppBar style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+                    <y::AppBarNavIcon />
+                </y::AppBar>
             </y::App>
         }
     }

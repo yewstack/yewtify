@@ -5,6 +5,7 @@ pub mod styles;
 mod utils;
 
 pub use components::app::App;
+pub use components::app_bar::{app_bar::AppBar, app_bar_nav_icon::AppBarNavIcon};
 pub use components::list::{
     list::List, list_item::ListItem, list_item_action::ListItemAction,
     list_item_avatar::ListItemAvatar, list_item_content::ListItemContent,

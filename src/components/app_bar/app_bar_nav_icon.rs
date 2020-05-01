@@ -1,22 +1,20 @@
 use crate::utils::PushIf;
 use yew::prelude::*;
 
-pub struct App {
+pub struct AppBarNavIcon {
+    // TODO: Use `Button` component internally. (calculate and get classes)
     props: Props,
 }
 
 pub struct Msg {}
 
-#[mixin::insert(Themeable, RightToLeft)]
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
-    #[prop_or_default]
-    pub id: Option<String>,
     #[prop_or_default]
     pub children: Children,
 }
 
-impl Component for App {
+impl Component for AppBarNavIcon {
     type Message = Msg;
     type Properties = Props;
 
@@ -34,19 +32,10 @@ impl Component for App {
     }
 
     fn view(&self) -> Html {
-        let classes = Classes::from("v-application");
-        let mut classes = classes.extend(self.props.theme_classes());
-        classes.push_if_or(
-            self.props.is_rtl(),
-            "v-application--is-rtl",
-            "v-application--is-ltr",
-        );
+        let mut classes = Classes::from("v-app-bar-nav-icon");
+        // TODO: Add classes from `Button`
         html! {
-            <div class=classes data-app=true>
-                <div class="v-application--wrap">
-                    { self.props.children.render() }
-                </div>
-            </div>
+            <div class=classes />
         }
     }
 }

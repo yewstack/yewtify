@@ -1,22 +1,21 @@
 use crate::utils::PushIf;
 use yew::prelude::*;
 
-pub struct App {
+pub struct AppBar {
     props: Props,
 }
 
 pub struct Msg {}
 
-#[mixin::insert(Themeable, RightToLeft)]
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     #[prop_or_default]
-    pub id: Option<String>,
+    pub style: String,
     #[prop_or_default]
     pub children: Children,
 }
 
-impl Component for App {
+impl Component for AppBar {
     type Message = Msg;
     type Properties = Props;
 
@@ -34,19 +33,14 @@ impl Component for App {
     }
 
     fn view(&self) -> Html {
-        let classes = Classes::from("v-application");
-        let mut classes = classes.extend(self.props.theme_classes());
-        classes.push_if_or(
-            self.props.is_rtl(),
-            "v-application--is-rtl",
-            "v-application--is-ltr",
-        );
+        let mut classes = Classes::from("v-app-bar");
+        classes.push("v-sheet v-sheet--tile theme--dark v-toolbar v-toolbar--dense v-app-bar--clipped v-app-bar--fixed red");
         html! {
-            <div class=classes data-app=true>
-                <div class="v-application--wrap">
+            <header class=classes style=self.props.style>
+                <div class="v-toolbar__content" data-booted=true>
                     { self.props.children.render() }
                 </div>
-            </div>
+            </header>
         }
     }
 }
