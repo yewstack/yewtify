@@ -25,6 +25,12 @@ html! {
 
 - [x] **App** (v-app)
 - [x] **NavigationDrawer** (v-navigation-drawer)
+- [x] **List** (v-list)
+- [x] **ListItem** (v-list-item)
+- [x] **ListItemAction** (v-list-item-action)
+- [x] **ListItemAvatar** (v-list-item-avatar)
+- [x] **ListItemContent** (v-list-item-content)
+- [x] **ListItemTitle** (v-list-item-title)
 
 ## Add more components
 
