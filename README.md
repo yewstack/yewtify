@@ -1,6 +1,6 @@
 # Yewtify
 
-Vuetify components for Yew Framework.
+Vuetify components for the [Yew framework](https://github.com/yewstack/yew).
 
 ## Usage
 
@@ -21,17 +21,17 @@ html! {
 }
 ```
 
-## Available components
+## Already available components
 
 - [x] **App** (v-app)
 - [x] **NavigationDrawer** (v-navigation-drawer)
 
-## Add more components
+## Adding additional components
 
-Work in progress yet... Feel free to add your component.
+This is still a work in progress... feel free to add additional components.
 
-To port a component that hasn't ported yet open this folder:
+To port a component that hasn't been ported yet open this folder:
 
 https://github.com/vuetifyjs/vuetify/tree/master/packages/vuetify/src/components
 
-Choose a component you need and add it to `src/components` folder.
+Choose a component you need and add it to the `src/components` directory.
