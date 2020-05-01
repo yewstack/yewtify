@@ -10,6 +10,8 @@ pub struct Msg {}
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     #[prop_or_default]
+    pub link: bool,
+    #[prop_or_default]
     pub children: Children,
 }
 

@@ -1,4 +1,5 @@
 use yew::prelude::*;
+use yewtify as y;
 
 pub struct YouTubeLayout {}
 
@@ -22,19 +23,22 @@ impl Component for YouTubeLayout {
 
     fn view(&self) -> Html {
         html! {
-            <yewtify::App id="inspire">
-                <yewtify::NavigationDrawer app=true clipped=true>
-                    <yewtify::List dense=true>
-                        <yewtify::ListItem>
-                            <yewtify::ListItemAction>
-                                <yewtify::ListItemIcon icon=yewtify::MdiIcon::TrendingUp />
-                            </yewtify::ListItemAction>
-                            <yewtify::ListItemContent>
-                            </yewtify::ListItemContent>
-                        </yewtify::ListItem>
-                    </yewtify::List>
-                </yewtify::NavigationDrawer>
-            </yewtify::App>
+            <y::App id="inspire">
+                <y::NavigationDrawer app=true clipped=true>
+                    <y::List dense=true>
+                        <y::ListItem link=true>
+                            <y::ListItemAction>
+                                <y::ListItemIcon icon=y::MdiIcon::TrendingUp />
+                            </y::ListItemAction>
+                            <y::ListItemContent>
+                                <y::ListItemTitle>
+                                </y::ListItemTitle>
+                            </y::ListItemContent>
+                        </y::ListItem>
+                        <y::SubHeader>{ "SUBSCRIPTIONS" }</y::SubHeader>
+                    </y::List>
+                </y::NavigationDrawer>
+            </y::App>
         }
     }
 }
