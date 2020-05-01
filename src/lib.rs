@@ -15,3 +15,4 @@ pub use components::list::{
 pub use components::navigation_drawer::NavigationDrawer;
 pub use components::subheader::SubHeader;
 pub use mdi_icon::MdiIcon;
+pub use styles::Color;

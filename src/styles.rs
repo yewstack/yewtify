@@ -1,9 +1,9 @@
 use strum::AsRefStr;
 use yew::Classes;
 
-#[derive(AsRefStr, Debug)]
+#[derive(AsRefStr, Debug, Clone, PartialEq, Eq, Hash)]
 #[strum(serialize_all = "kebab-case")]
-pub enum Tone {
+pub enum Color {
     Red,
     Pink,
     Purple,
@@ -26,9 +26,22 @@ pub enum Tone {
     Black,
     White,
     Transparent,
+    Default,
 }
 
-#[derive(AsRefStr, Debug)]
+impl Color {
+    pub fn is_default(&self) -> bool {
+        *self == Self::Default
+    }
+}
+
+impl Default for Color {
+    fn default() -> Self {
+        Self::Default
+    }
+}
+
+#[derive(AsRefStr, Debug, Clone, PartialEq, Eq, Hash)]
 #[strum(serialize_all = "kebab-case")]
 pub enum Intensity {
     Lighten5,
@@ -46,14 +59,14 @@ pub enum Intensity {
     Accent4,
 }
 
-pub struct Color {
-    pub bg_tone: Option<Tone>,
+pub struct ColorSet {
+    pub bg_tone: Option<Color>,
     pub bg_intensity: Option<Intensity>,
-    pub text_tone: Option<Tone>,
+    pub text_tone: Option<Color>,
     pub text_intensity: Option<Intensity>,
 }
 
-impl Into<Classes> for Color {
+impl Into<Classes> for ColorSet {
     fn into(self) -> Classes {
         let mut classes = Classes::new();
         if let Some(bg_tone) = self.bg_tone {
@@ -67,10 +80,6 @@ impl Into<Classes> for Color {
         todo!();
         classes
     }
-}
-
-pub trait ToClass {
-    fn to_class(&self) -> &str;
 }
 
 /*
