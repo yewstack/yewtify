@@ -32,10 +32,10 @@ impl Component for ListItem {
     }
 
     fn view(&self) -> Html {
-        let mut classes = Classes::from("v-list-item");
+        let classes = Classes::from("v-list-item");
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                { self.props.children.clone() }
             </div>
         }
     }

@@ -35,15 +35,15 @@ impl Component for App {
     fn view(&self) -> Html {
         let classes = Classes::from("v-application");
         let mut classes = classes.extend(self.props.theme_classes());
-        classes.push_if_else(
-            self.props.is_rtl(),
-            "v-application--is-rtl",
-            "v-application--is-ltr",
-        );
+        if self.props.is_rtl() {
+            classes.push("v-application--is-rtl");
+        } else {
+            classes.push("v-application--is-ltr");
+        }
         html! {
             <div class=classes data-app=true>
                 <div class="v-application--wrap">
-                    { self.props.children.render() }
+                    { self.props.children.clone() }
                 </div>
             </div>
         }

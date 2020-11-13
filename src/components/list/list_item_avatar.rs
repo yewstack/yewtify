@@ -33,10 +33,10 @@ impl Component for ListItemAvatar {
 
     fn view(&self) -> Html {
         let mut classes = Classes::from("v-list-item-avatar");
-        classes.push_if(self.props.horizontal, "v-list-item__avatar--horizontal");
+        if self.props.horizontal { classes.push("v-list-item__avatar--horizontal"); }
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                { self.props.children.clone() }
             </div>
         }
     }

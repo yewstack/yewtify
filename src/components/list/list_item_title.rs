@@ -30,10 +30,10 @@ impl Component for ListItemTitle {
     }
 
     fn view(&self) -> Html {
-        let mut classes = Classes::from("v-list-item__title");
+        let classes = Classes::from("v-list-item__title");
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                { self.props.children.clone() }
             </div>
         }
     }

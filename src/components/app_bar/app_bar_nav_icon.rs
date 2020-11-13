@@ -31,7 +31,7 @@ impl Component for AppBarNavIcon {
     }
 
     fn view(&self) -> Html {
-        let mut classes = Classes::from("v-app-bar-nav-icon");
+        let classes = Classes::from("v-app-bar-nav-icon");
         // TODO: Add classes from `Button`
         html! {
             <div class=classes />

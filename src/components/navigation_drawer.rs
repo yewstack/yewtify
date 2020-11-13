@@ -43,9 +43,9 @@ impl Component for NavigationDrawer {
     fn view(&self) -> Html {
         let mut classes = Classes::new();
         classes.push("v-navigation-drawer");
-        classes.push_if(self.props.absolute, "v-navigation-drawer--absolute");
-        classes.push_if(self.props.bottom, "v-navigation-drawer--bottom");
-        classes.push_if(self.props.clipped, "v-navigation-drawer--clipped");
+        if self.props.absolute { classes.push("v-navigation-drawer--absolute"); }
+        if self.props.bottom { classes.push("v-navigation-drawer--bottom"); }
+        if self.props.clipped { classes.push("v-navigation-drawer--clipped"); }
         /*
         "v-navigation-drawer--close": !this.isActive,
         */
@@ -59,12 +59,12 @@ impl Component for NavigationDrawer {
         "v-navigation-drawer--open": this.isActive,
         "v-navigation-drawer--open-on-hover": this.expandOnHover,
         */
-        classes.push_if(self.props.right, "v-navigation-drawer--right");
-        classes.push_if(self.props.temporary, "v-navigation-drawer--temporary");
+        if self.props.right { classes.push("v-navigation-drawer--right"); }
+        if self.props.temporary { classes.push("v-navigation-drawer--temporary"); }
         html! {
             <div class=classes>
                 <div class="v-navigation-drawer__content">
-                    { self.props.children.render() }
+                    { self.props.children.clone() }
                 </div>
                 <div class="v-navigation-drawer__border" />
             </div>

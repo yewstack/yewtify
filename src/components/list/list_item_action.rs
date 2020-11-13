@@ -30,10 +30,10 @@ impl Component for ListItemAction {
     }
 
     fn view(&self) -> Html {
-        let mut classes = Classes::from("v-list-item__action");
+        let classes = Classes::from("v-list-item__action");
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                { self.props.children.clone() }
             </div>
         }
     }

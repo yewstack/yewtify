@@ -49,18 +49,18 @@ impl Component for List {
 
     fn view(&self) -> Html {
         let mut classes = Classes::from("v-list");
-        classes.push_if(self.props.dense, "v-list--dense");
-        classes.push_if(self.props.disabled, "v-list--disabled");
-        classes.push_if(self.props.flat, "v-list--flat");
-        classes.push_if(self.props.nav, "v-list--nav");
-        classes.push_if(self.props.rounded, "v-list--rounded");
-        classes.push_if(self.props.shaped, "v-list--shaped");
-        classes.push_if(self.props.subheader, "v-list--subheader");
-        classes.push_if(self.props.two_line, "v-list--two-line");
-        classes.push_if(self.props.three_line, "v-list--three-line");
+        if self.props.dense { classes.push("v-list--dense"); }
+        if self.props.disabled { classes.push("v-list--disabled"); }
+        if self.props.flat { classes.push("v-list--flat"); }
+        if self.props.nav { classes.push("v-list--nav"); }
+        if self.props.rounded { classes.push("v-list--rounded"); }
+        if self.props.shaped { classes.push("v-list--shaped"); }
+        if self.props.subheader { classes.push("v-list--subheader"); }
+        if self.props.two_line { classes.push("v-list--two-line"); }
+        if self.props.three_line { classes.push("v-list--three-line"); }
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                { self.props.children.clone() }
             </div>
         }
     }

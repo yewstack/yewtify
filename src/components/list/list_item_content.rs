@@ -30,10 +30,10 @@ impl Component for ListItemContent {
     }
 
     fn view(&self) -> Html {
-        let mut classes = Classes::from("v-list-item__content");
+        let classes = Classes::from("v-list-item__content");
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                { self.props.children.clone() }
             </div>
         }
     }

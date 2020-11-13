@@ -33,10 +33,10 @@ impl Component for SubHeader {
 
     fn view(&self) -> Html {
         let mut classes = Classes::from("v-subheader");
-        classes.push_if(self.props.inset, "v-subheader--inset");
+        if self.props.inset { classes.push("c-subheader--inset") };
         html! {
             <div class=classes>
-                { self.props.children.render() }
+                { self.props.children.clone() }
             </div>
         }
     }

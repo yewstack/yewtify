@@ -46,7 +46,7 @@ impl Component for AppBar {
         html! {
             <header class=classes style=header_style>
                 <div class="v-toolbar__content" style=content_style data-booted=true>
-                    { self.props.children.render() }
+                    { self.props.children.clone() }
                 </div>
             </header>
         }
